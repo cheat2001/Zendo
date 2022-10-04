@@ -1,0 +1,31 @@
+<nav class="w-[100%] h-[70px]   flex items-center justify-between px-12">
+    <div class="flex items-center gap-10 ">
+        <div class="h-[100%] cursor-pointer" (click)="actionEvent()">
+            <img width="30" src="../../assets/images/menu.png" alt="">
+        </div>
+        <h1 class="text-3xl cursor-pointer selection:not-sr-only">ZENDO</h1>
+    </div>
+    <ul class="flex items-center gap-5 text-lg uppercase">
+        <li>
+            <a href="#">Search</a>
+        </li>
+        <li>
+            <a href="#">notification</a>
+        </li>
+        <li>
+            <a href="#">settings</a>
+        </li>
+        <li>
+            <a href="#">login</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- Pop up Start-->
+<div [ngClass]="action?'':'opacity-0 scale-0 pointer-events-none left-0 top-0'" class=" z-10 w-[350px] h-[400px] bg-[#ffffff]  absolute left-[50%] duration-500 top-[50%] translate-x-[-50%] translate-y-[-50%] cursor-pointer"></div>
+
+<!-- Pop up End -->
+
+<!-- overlay start -->
+<div (click)="actionEvent()" [ngClass]="action?'':'hidden'" class="w-[100%] h-[100vh] top-0 absolute left-0 bg-[#00000073] duration-500 overflow-hidden"></div>
+<!-- overlay end -->
