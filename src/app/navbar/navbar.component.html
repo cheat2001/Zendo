@@ -1,4 +1,4 @@
-<nav class="w-[100%] h-[70px]   flex items-center justify-between px-12">
+<nav class="w-[100%] h-[70px]  flex items-center justify-between px-12">
     <div class="flex items-center gap-10 ">
         <div class="h-[100%] cursor-pointer" (click)="actionEvent()">
             <img width="30" src="../../assets/images/menu.png" alt="">
@@ -6,7 +6,8 @@
         <h1 class="text-3xl cursor-pointer selection:not-sr-only">ZENDO</h1>
     </div>
     <ul class="flex items-center gap-5 text-lg uppercase">
-        <li>
+        <li class="flex" (click)="searchActionEvent()">
+            <img width="20" class="object-contain" src="../../assets/images/search.png" alt="">
             <a href="#">Search</a>
         </li>
         <li>
@@ -26,6 +27,15 @@
 
 <!-- Pop up End -->
 
-<!-- overlay start -->
-<div (click)="actionEvent()" [ngClass]="action?'':'hidden'" class="w-[100%] h-[100vh] top-0 absolute left-0 bg-[#00000073] duration-500 overflow-hidden"></div>
+<!-- overlay start with pop up-->
+<div (click)="actionEvent()" [ngClass]="action?'':'opacity-0 pointer-events-none'" class="w-[100%] h-[100vh] top-0 absolute left-0 bg-[#00000073] duration-500 overflow-hidden"></div>
 <!-- overlay end -->
+
+
+
+<!-- overlay start with search-->
+<div (click)="searchActionEvent()" [ngClass]="searchAction?'duration-400':'opacity-0 pointer-events-none'" class="w-[100%] h-[100vh] top-0 absolute left-0 bg-[#00000073] duration-500 overflow-hidden ease-in-out"></div>
+<!-- overlay end -->
+<!-- search bar start -->
+<div [ngClass]="searchAction?'top-[0] duration-300':''" class="z-100 w-[100%] h-[50vh] bg-[#ffffff] absolute top-[-100%] left-0 duration-300 ease-in-out"></div>
+<!-- search bar end -->
