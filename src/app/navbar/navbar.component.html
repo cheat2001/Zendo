@@ -6,36 +6,39 @@
         <h1 routerLink="home" class="text-3xl cursor-pointer selection:not-sr-only">ZENDO</h1>
     </div>
     <ul class="flex items-center gap-5 text-lg uppercase">
-        <li class="flex" (click)="searchActionEvent()">
+        <li class="flex cursor-pointer" (click)="searchActionEvent()">
             <img width="20" class="object-contain" src="../../assets/images/search.png" alt="">
-            <a href="#">Search</a>
+            <a *ngIf="screenWidth>700">Search</a>
         </li>
-        <li>
-            <a>notification</a>
+        <li class=" flex cursor-pointer ">
+            <img width="20 " class="object-contain " src="../../assets/images/notification.png " alt=" ">
+            <a *ngIf="screenWidth>700">notification</a>
         </li>
-        <li>
-            <a>settings</a>
+        <li class="flex cursor-pointer ">
+            <img width="20 " class="object-contain " src="../../assets/images/settings.png " alt=" ">
+            <a *ngIf="screenWidth>700">settings</a>
         </li>
-        <li>
-            <a routerLink="login">login</a>
+        <li routerLink="login" class="flex cursor-pointer ">
+
+            <a>login</a>
         </li>
     </ul>
 </nav>
 
 <!-- Pop up Start-->
-<div [ngClass]="action?'top-[50%] left-[50%]':'opacity-0 scale-50 pointer-events-none top-[25%] left-[25%]'" class=" z-10 w-[350px] h-[400px] bg-[#ffffff]  absolute duration-300 translate-x-[-50%] translate-y-[-50%] cursor-pointer ease-in-out"></div>
+<div [ngClass]="action? 'top-[50%] left-[50%]': 'opacity-0 scale-50 pointer-events-none top-[25%] left-[25%]' " class=" z-10 w-[350px] h-[400px] bg-[#ffffff] absolute duration-300 translate-x-[-50%] translate-y-[-50%] cursor-pointer ease-in-out "></div>
 
 <!-- Pop up End -->
 
 <!-- overlay start with pop up-->
-<div (click)="actionEvent()" [ngClass]="action?'':'opacity-0 pointer-events-none'" class="w-[100%] h-[100vh] top-0 absolute left-0 bg-[#00000073] duration-500 overflow-hidden"></div>
+<div (click)="actionEvent() " [ngClass]="action? '': 'opacity-0 pointer-events-none' " class="w-[100%] h-[100vh] top-0 absolute left-0 bg-[#00000073] duration-500 overflow-hidden "></div>
 <!-- overlay end -->
 
 
 
 <!-- overlay start with search-->
-<div (click)="searchActionEvent()" [ngClass]="searchAction?'duration-400':'opacity-0 pointer-events-none'" class="w-[100%] h-[100vh] top-0 absolute left-0 bg-[#00000073] duration-500 overflow-hidden ease-in-out"></div>
+<div (click)="searchActionEvent() " [ngClass]="searchAction? 'duration-400': 'opacity-0 pointer-events-none' " class="w-[100%] h-[100vh] top-0 absolute left-0 bg-[#00000073] duration-500 overflow-hidden ease-in-out "></div>
 <!-- overlay end -->
 <!-- search bar start -->
-<div [ngClass]="searchAction?'top-[0] duration-300':'top-[-100%]'" class="z-100 w-[100%] h-[50vh] delay-150 bg-[#ffffff] absolute  left-0 duration-300 ease-in-out shadow-sm"></div>
+<div [ngClass]="searchAction? 'top-[0] duration-300': 'top-[-100%]' " class="z-100 w-[100%] h-[50vh] delay-150 bg-[#ffffff] absolute left-0 duration-300 ease-in-out shadow-sm "></div>
 <!-- search bar end -->

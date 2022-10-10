@@ -1,13 +1,13 @@
 <br>
 <div class="grid grid-cols-1 gap-4 mr-[6%] ml-[6%] sm:grid-cols-2 lg:grid-cols-4">
     <div class="card cursor-pointer" *ngFor="let productsitem of item">
-        <img [src]="productsitem.imageUrl" class="w-[100%] h-[80%] hover:scale-[1.02] ease-out duration-300 hover:drop-shadow-2xl" alt="">
+        <img [src]="productsitem.imageUrl" class="w-[100%] h-[80%] object-cover hover:scale-[1.02] ease-out duration-300 hover:drop-shadow-2xl" alt="">
         <div class="ml-2 mt-7">
             <span>
                 <p class="text-pink-400">US {{productsitem.itemprice | currency}}<span class="mr-5 ml-3 text-gray-900">50%</span><span class="line-through font-light text-gray-400">US {{productsitem.itemprice | currency}}</span>
-                    <img src="assets/images/love (1).png" class="w-5 inline mr-2 float-right" alt="">
-                </p>
-            </span>    
+            <img src="assets/images/love (1).png" class="w-5 inline mr-2 float-right" alt="">
+            </p>
+            </span>
             <p class="mt-2 mb-2">{{productsitem.itemName}}</p>
             <span class="flex justify-between w-[35%]">
                 <div class="bg-black rounded border-2 w-4 h-4 border-none"></div>
@@ -16,6 +16,6 @@
                 <div class="bg-purple-500 rounded border-2 w-4 h-4 border-none"></div>
                 <img src="assets/images/plus.png" class="w-4" alt="">
             </span>
-        </div>  
+        </div>
     </div>
 </div>

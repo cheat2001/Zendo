@@ -8,13 +8,18 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
   action:boolean=false;
+   screenWidth:any;
+   screenHeight:any;
+  ngOnInit(): void {
+    this.screenWidth=window.innerWidth;
+    this.screenHeight=window.innerHeight;
+  }
+
   actionEvent():void{
     this.action=!this.action;
   }
+
   searchAction:boolean=false;
   searchActionEvent():void{
     this.searchAction=!this.searchAction;
