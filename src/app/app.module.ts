@@ -14,7 +14,7 @@ import { SlidenavComponent } from './slidenav/slidenav.component';
     AppComponent,
     NavbarComponent,
 
-    LoginComponent
+    LoginComponent,
     FooterComponent,
     SlidenavComponent
 
