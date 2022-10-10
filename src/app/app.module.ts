@@ -21,7 +21,9 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([{path:'home',component:SlidenavComponent},
+    RouterModule.forRoot([
+      {path:'',redirectTo: 'home',pathMatch:'full'},
+      {path:'home',component:SlidenavComponent},
   {path:'login',component:LoginComponent}
   ])
   ],

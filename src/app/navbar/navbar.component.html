@@ -8,15 +8,15 @@
     <ul class="flex items-center gap-5 text-lg uppercase">
         <li class="flex cursor-pointer" (click)="searchActionEvent()">
             <img width="20" class="object-contain" src="../../assets/images/search.png" alt="">
-            <a *ngIf="screenWidth>700">Search</a>
+            <a *ngIf="screenWidth>700" class="ml-2">Search</a>
         </li>
         <li class=" flex cursor-pointer ">
             <img width="20 " class="object-contain " src="../../assets/images/notification.png " alt=" ">
-            <a *ngIf="screenWidth>700">notification</a>
+            <a *ngIf="screenWidth>700" class="ml-2">notification</a>
         </li>
         <li class="flex cursor-pointer ">
             <img width="20 " class="object-contain " src="../../assets/images/settings.png " alt=" ">
-            <a *ngIf="screenWidth>700">settings</a>
+            <a *ngIf="screenWidth>700" class="ml-2">settings</a>
         </li>
         <li routerLink="login" class="flex cursor-pointer ">
 
@@ -26,7 +26,36 @@
 </nav>
 
 <!-- Pop up Start-->
-<div [ngClass]="action? 'top-[50%] left-[50%]': 'opacity-0 scale-50 pointer-events-none top-[25%] left-[25%]' " class=" z-10 w-[350px] h-[400px] bg-[#ffffff] absolute duration-300 translate-x-[-50%] translate-y-[-50%] cursor-pointer ease-in-out "></div>
+<div [ngClass]="action? 'top-[50%] left-[50%]': 'opacity-0 scale-50 pointer-events-none top-[25%] left-[25%]' " class=" z-10 w-[350px] h-[400px] bg-[#ffffff] absolute duration-300 translate-x-[-50%] translate-y-[-50%] cursor-pointer ease-in-out p-5 flex flex-col gap-4">
+    <div class="absolute right-6 top-5 font-semibold text-xl" (click)="actionEvent() ">X</div>
+    <h1 class="font-semibold">ភាសា/Languages</h1>
+    <div>
+        <input type="radio" name="language" id="">
+        <label class="ml-5" for="">ខ្មែរ</label>
+    </div>
+    <div>
+        <input type="radio" name="language" id="">
+        <label class="ml-5" for="">English</label>
+    </div>
+    <h1 class="font-semibold">Shop Preference</h1>
+    <div>
+        <input type="radio" name="shop" id="">
+        <label class="ml-5" for="">Women</label>
+    </div>
+    <div>
+        <input type="radio" name="shop" id="">
+        <label class="ml-5" for="">Men</label>
+    </div>
+    <div>
+        <input type="radio" name="shop" id="">
+        <label class="ml-5" for="">Boys</label>
+    </div>
+    <div>
+        <input type="radio" name="shop" id="">
+        <label class="ml-5" for="">Girls</label>
+    </div>
+    <button class="bg-black duration-300 text-white py-3 rounded-md hover:bg-[#000000c4] active:scale-90">Ok</button>
+</div>
 
 <!-- Pop up End -->
 
