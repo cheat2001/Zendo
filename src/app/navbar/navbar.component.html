@@ -1,4 +1,4 @@
-<nav class="w-[100%] h-[70px]  flex items-center justify-between px-12">
+<nav class="w-[100%] h-[70px] sticky z-50 bg-white  top-0 flex items-center justify-between px-12">
     <div class="flex items-center gap-10 ">
         <div class="h-[100%] cursor-pointer" (click)="actionEvent()">
             <img class="w-[30px] min-w-[30px]" src="../../assets/images/menu.png" alt="">
@@ -14,7 +14,7 @@
             <img width="20 " class="object-contain " src="../../assets/images/notification.png " alt=" ">
             <a *ngIf="screenWidth>700" class="ml-2">notification</a>
         </li>
-        <li class="flex cursor-pointer ">
+        <li (click)="settingActionEvent()" class="flex cursor-pointer ">
             <img width="20 " class="object-contain " src="../../assets/images/settings.png " alt=" ">
             <a *ngIf="screenWidth>700" class="ml-2">settings</a>
         </li>
@@ -26,7 +26,7 @@
 </nav>
 
 <!-- Pop up Start-->
-<div [ngClass]="action? 'top-[50%] left-[50%]': 'opacity-0 scale-50 pointer-events-none top-[25%] left-[25%]' " class=" z-10 w-[350px] h-[400px] bg-[#ffffff] absolute duration-300 translate-x-[-50%] translate-y-[-50%] cursor-pointer ease-in-out p-5 flex flex-col gap-4">
+<div [ngClass]="action? 'top-[50%] left-[50%]': 'opacity-0 scale-50 pointer-events-none top-[25%] left-[25%]' " class=" w-[350px] h-[400px] bg-[#ffffff] fixed duration-300 translate-x-[-50%] translate-y-[-50%] cursor-pointer ease-in-out p-5 flex flex-col gap-4 z-[200]">
     <div class="absolute right-6 top-5 font-semibold text-xl" (click)="actionEvent() ">X</div>
     <h1 class="font-semibold">ភាសា/Languages</h1>
     <div>
@@ -54,20 +54,39 @@
         <input type="radio" name="shop" id="">
         <label class="ml-5" for="">Girls</label>
     </div>
-    <button class="bg-black duration-300 text-white py-3 rounded-md hover:bg-[#000000c4] active:scale-90">Ok</button>
+    <button class="bg-black duration-300 text-white py-3 rounded-md hover:bg-[#000000c4] active:scale-y-90">Ok</button>
 </div>
 
 <!-- Pop up End -->
 
 <!-- overlay start with pop up-->
-<div (click)="actionEvent() " [ngClass]="action? '': 'opacity-0 pointer-events-none' " class="w-[100%] h-[100vh] top-0 absolute left-0 bg-[#00000073] duration-500 overflow-hidden "></div>
+<div (click)="actionEvent() " [ngClass]="action? '': 'opacity-0 pointer-events-none' " class="w-[100%] h-[100vh] top-0 fixed left-0 bg-[#00000073] duration-500 overflow-hidden z-[150]"></div>
 <!-- overlay end -->
 
 
 
 <!-- overlay start with search-->
-<div (click)="searchActionEvent() " [ngClass]="searchAction? 'duration-400': 'opacity-0 pointer-events-none' " class="w-[100%] h-[100vh] top-0 absolute left-0 bg-[#00000073] duration-500 overflow-hidden ease-in-out "></div>
+<div (click)="searchActionEvent() " [ngClass]="searchAction? 'duration-400': 'opacity-0 pointer-events-none' " class="w-[100%] h-[100vh] top-0 fixed left-0 bg-[#00000073] duration-500 overflow-hidden ease-in-out z-[200]"></div>
 <!-- overlay end -->
 <!-- search bar start -->
-<div [ngClass]="searchAction? 'top-[0] duration-300': 'top-[-100%]' " class="z-100 w-[100%] h-[50vh] delay-150 bg-[#ffffff] absolute left-0 duration-300 ease-in-out shadow-sm "></div>
+<div [ngClass]="searchAction? 'top-[0] duration-300': 'top-[-100%]' " class="z-100 w-[100%] h-[50vh] delay-150 bg-[#ffffff] fixed left-0 duration-300 ease-in-out shadow-sm z-[200] "></div>
 <!-- search bar end -->
+
+
+<!-- setting bar start -->
+<div [ngClass]="settingAction?'w-[100%]':'w-[0] pl-[0]'" class="w-[100%] h-[100vh] bg-[#ffffffd2] fixed top-0 duration-300 z-[100] overflow-hidden pt-[100px] flex flex-col gap-5 pl-[100px]">
+    <h1 (click)="settingActionEvent()" class="text-3xl absolute left-14 top-6 cursor-pointer">X</h1>
+    <h1 class="text-3xl">Settings</h1>
+    <p>ភាស/Languages</p>
+    <div>
+        <input type="radio">
+        <label for="">ខ្មែរ</label>
+    </div>
+    <div>
+        <input type="radio">
+        <label for="">English</label>
+    </div>
+
+</div>
+
+<!-- setting bar end -->
