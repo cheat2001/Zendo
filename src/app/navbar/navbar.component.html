@@ -3,7 +3,7 @@
         <div class="h-[100%] cursor-pointer" (click)="actionEvent()">
             <img class="w-[30px] min-w-[30px]" src="../../assets/images/menu.png" alt="">
         </div>
-        <h1 class="text-3xl cursor-pointer selection:not-sr-only">ZENDO</h1>
+        <h1 routerLink="home" class="text-3xl cursor-pointer selection:not-sr-only">ZENDO</h1>
     </div>
     <ul class="flex items-center gap-5 text-lg uppercase">
         <li class="flex" (click)="searchActionEvent()">
@@ -11,13 +11,13 @@
             <a href="#">Search</a>
         </li>
         <li>
-            <a href="#">notification</a>
+            <a>notification</a>
         </li>
         <li>
-            <a href="#">settings</a>
+            <a>settings</a>
         </li>
         <li>
-            <a href="#">login</a>
+            <a routerLink="login">login</a>
         </li>
     </ul>
 </nav>
