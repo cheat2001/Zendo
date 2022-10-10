@@ -1,7 +1,7 @@
 <nav class="w-[100%] h-[70px]  flex items-center justify-between px-12">
     <div class="flex items-center gap-10 ">
         <div class="h-[100%] cursor-pointer" (click)="actionEvent()">
-            <img width="30" src="../../assets/images/menu.png" alt="">
+            <img class="w-[30px] min-w-[30px]" src="../../assets/images/menu.png" alt="">
         </div>
         <h1 class="text-3xl cursor-pointer selection:not-sr-only">ZENDO</h1>
     </div>
@@ -37,5 +37,5 @@
 <div (click)="searchActionEvent()" [ngClass]="searchAction?'duration-400':'opacity-0 pointer-events-none'" class="w-[100%] h-[100vh] top-0 absolute left-0 bg-[#00000073] duration-500 overflow-hidden ease-in-out"></div>
 <!-- overlay end -->
 <!-- search bar start -->
-<div [ngClass]="searchAction?'top-[0] duration-300':'top-[-100%]'" class="z-100 w-[100%] h-[50vh] bg-[#ffffff] absolute  left-0 duration-300 ease-in-out shadow-sm"></div>
+<div [ngClass]="searchAction?'top-[0] duration-300':'top-[-100%]'" class="z-100 w-[100%] h-[50vh] delay-150 bg-[#ffffff] absolute  left-0 duration-300 ease-in-out shadow-sm"></div>
 <!-- search bar end -->
