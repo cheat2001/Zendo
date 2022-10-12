@@ -1,5 +1,5 @@
-<nav class="w-[100%] h-[70px] sticky z-50 bg-white  top-0 flex items-center justify-between px-12">
-    <div class="flex items-center gap-10 ">
+<nav class="w-[100%] h-[70px] sticky z-50 bg-white  top-0 flex items-center justify-between px-5 md:px-12">
+    <div class="flex items-center gap-5 ">
         <div class="h-[100%] cursor-pointer" (click)="actionEvent()">
             <img class="w-[30px] min-w-[30px]" src="../../assets/images/menu.png" alt="">
         </div>
@@ -7,15 +7,15 @@
     </div>
     <ul class="flex items-center gap-5 text-lg uppercase">
         <li class="flex cursor-pointer" (click)="searchActionEvent()">
-            <img width="20" class="object-contain" src="../../assets/images/search.png" alt="">
+            <img class="object-contain w-[20px] min-w-[20px]" src="../../assets/images/search.png" alt="">
             <a *ngIf="screenWidth>700" class="ml-2">Search</a>
         </li>
         <li class=" flex cursor-pointer ">
-            <img width="20 " class="object-contain " src="../../assets/images/notification.png " alt=" ">
+            <img class="object-contain w-[20px] min-w-[20px]" src="../../assets/images/notification.png " alt=" ">
             <a *ngIf="screenWidth>700" class="ml-2">notification</a>
         </li>
         <li (click)="settingActionEvent()" class="flex cursor-pointer ">
-            <img width="20 " class="object-contain " src="../../assets/images/settings.png " alt=" ">
+            <img class="object-contain w-[20px] min-w-[20px]" src="../../assets/images/settings.png " alt=" ">
             <a *ngIf="screenWidth>700" class="ml-2">settings</a>
         </li>
         <li routerLink="login" class="flex cursor-pointer ">
