@@ -24,7 +24,7 @@ export class NavbarComponent implements OnInit {
   searchActionEvent():void{
     this.searchAction=!this.searchAction;
   }
-  settingAction:boolean=true;
+  settingAction:boolean=false;
   settingActionEvent():void{
    this.settingAction=!this.settingAction;
   }
